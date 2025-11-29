@@ -14,3 +14,5 @@ yearly_global_mean <- global_Warming_dataset %>% #Creating a new subset of Main 
 plot(yearly_global_mean$Year, yearly_global_mean$global_Temperature, # Scatter plotting the change in global temperature with year
      main = "Global Temperature vs Year",xlab = "Year", ylab = "Global Temperature", 
      sub = "Is there correlartion between the Global Temperature and Years from 1961 to 2022") 
+
+

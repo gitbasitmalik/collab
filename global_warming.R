@@ -16,3 +16,4 @@ plot(yearly_global_mean$Year, yearly_global_mean$global_Temperature, # Scatter p
      sub = "Is there correlartion between the Global Temperature and Years from 1961 to 2022") 
 
 
+

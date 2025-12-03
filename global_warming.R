@@ -23,3 +23,8 @@ year_1992to22 <- subset(yearly_global_mean, Year > 1991)
 mean_1961to91 <- mean(year_1961to91$global_Temperature, na.rm = TRUE)
 mean_1992to22 <- mean(year_1992to22$global_Temperature, na.rm = TRUE)
 
+new_dataset <- data.frame(
+      "Year Range"       = c("1961–1991", "1992–2022"),  
+       "Mean Temperature" = c(0.1033258, 0.8921226)
+   
+      )

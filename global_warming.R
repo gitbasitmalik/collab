@@ -37,5 +37,5 @@ main = "Annual Mean Temperature (1961–2022)",
 xlab = "Year",
 ylab = "Mean Temperature (°C)",
 ylim = c(0,1),
-las = 2)
+las = 1)
 

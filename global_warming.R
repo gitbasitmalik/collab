@@ -11,6 +11,9 @@ yearly_global_mean <- global_Warming_dataset %>% #Creating a new subset of Main 
   +     mutate(global_Temperature = round(global_Temperature, 4)) # and then rounding off the result upto 4 decimal points
 
 
+group <- subset(yearly_global_mean$global_Temperature, yearly_global_mean$Year < "1981")
+group <- subset(yearly_global_mean$global_Temperature, yearly_global_mean$Year > "1981" & yearly_global_mean$Year < "2001")
+group <- subset(yearly_global_mean$global_Temperature, yearly_global_mean$Year > "2001" )
 
 
 

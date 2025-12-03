@@ -19,23 +19,12 @@ yearly_global_mean <- global_Warming_dataset %>%
 year_1961to91 <- subset(yearly_global_mean, Year <= 1991)
 year_1992to22 <- subset(yearly_global_mean, Year > 1991)
 
-#calculte mean temperature for each period
-mean_1961to91 <- mean(year_1961to91$global_Temperature, na.rm = TRUE)
-mean_1992to22 <- mean(year_1992to22$global_Temperature, na.rm = TRUE)
-
+#Creating new Dataset to Merge temperature of Grouped Years from two diffrent dataset
 new_dataset <- data.frame(
-      "Year Range"       = c("1961–1991", "1992–2022"),  
-       "Mean Temperature" = c(0.1033258, 0.8921226)
+      '1961-1991'       = year_1961to91$global_Temperature,  
+       '1992-2022' = year_1992to22$global_Temperature
    
       )
 
-barplot(new_dataset$Mean.Temperature,
-names.arg = new_dataset$Year.Range,
-col = "lightblue",
-border = "black",
-main = "Mean Temperature of 1961 - 2001 & 2002 - 2022",
-xlab = "Year Group",
-ylab = "Mean Temperature (°C)",
-ylim = c(0,1),
-las = 1)
+
 

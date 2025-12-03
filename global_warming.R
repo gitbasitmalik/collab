@@ -2,7 +2,7 @@
 library(tidyverse)
 global_Warming_dataset <- read_csv('long_format_annual_surface_temp.csv',) #Importing Dataset
 global_Warming_dataset$Year <- sapply(global_Warming_dataset$Year, function(x) gsub("F", "",  x)) #Removing F character from years
-global_Warming_dataset$Year <- as.numeric(global_Warming_dataset$Year) #Coverting Year to numeric type
+global_Warming_dataset$Year <- as.numeric(global_Warming_dataset$Year) #Converting Year to numeric type
 
 #Grouping the dataset based upon the years and mean of the temperature in whole world in each year
 yearly_global_mean <- global_Warming_dataset %>% #Creating a new subset of Main dataset

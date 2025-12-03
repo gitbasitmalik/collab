@@ -10,10 +10,11 @@ yearly_global_mean <- global_Warming_dataset %>% #Creating a new subset of Main 
   +     summarise(global_Temperature = mean(Temperature, na.rm = TRUE),) %>% #and then calculating the mean of the global temperature for each year
   +     mutate(global_Temperature = round(global_Temperature, 4)) # and then rounding off the result upto 4 decimal points
 
-#Visualizing the Data
-plot(yearly_global_mean$Year, yearly_global_mean$global_Temperature, # Scatter plotting the change in global temperature with year
-     main = "Global Temperature vs Year",xlab = "Year", ylab = "Global Temperature", 
-     sub = "Is there correlartion between the Global Temperature and Years from 1961 to 2022") 
+
+group <- subset(yearly_global_mean$global_Temperature, yearly_global_mean$Year < "1981")
+group <- subset(yearly_global_mean$global_Temperature, yearly_global_mean$Year > "1981" & yearly_global_mean$Year < "2001")
+group <- subset(yearly_global_mean$global_Temperature, yearly_global_mean$Year > "2001" )
+
 
 
 

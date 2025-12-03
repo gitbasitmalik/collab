@@ -16,7 +16,7 @@ yearly_global_mean <- global_Warming_dataset %>%
   summarise(global_Temperature = round(mean(Temperature, na.rm = TRUE), 4))
 
 # Creating three groups based on Year
-group1 <- subset(yearly_global_mean, Year < 1981)
-group2 <- subset(yearly_global_mean, Year >= 1981 & Year < 2001)
-group3 <- subset(yearly_global_mean, Year >= 2001)
+year1961to81 <- subset(yearly_global_mean, Year < 1981)
+year1981to01 <- subset(yearly_global_mean, Year >= 1981 & Year < 2001)
+year2001to22 <- subset(yearly_global_mean, Year >= 2001)
 

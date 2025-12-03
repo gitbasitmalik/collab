@@ -15,11 +15,11 @@ yearly_global_mean <- global_Warming_dataset %>%
   group_by(Year) %>%
   summarise(global_Temperature = round(mean(Temperature, na.rm = TRUE), 4))
 
-# Creating three groups based on Year
-year1961to81 <- subset(yearly_global_mean, Year < 1981)
-year1981to01 <- subset(yearly_global_mean, Year >= 1981 & Year < 2001)
-year2001to22 <- subset(yearly_global_mean, Year >= 2001)
+# Creating two groups based on Year
+year_1961to91 <- subset(yearly_global_mean, Year <= 1991)
+year_1992to22 <- subset(yearly_global_mean, Year > 1991)
+
 #calculte mean temperature for each period
-mean_1961to81 <- mean(year1961to81$global_Temperature, na.rm = TRUE)
-mean_1981to01 <- mean(year1981to01$global_Temperature, na.rm = TRUE)
-mean_2001to22 <- mean(year2001to22$global_Temperature, na.rm = TRUE)
+mean_1961to91 <- mean(year_1961to91$global_Temperature, na.rm = TRUE)
+mean_1992to22 <- mean(year_1992to22$global_Temperature, na.rm = TRUE)
+

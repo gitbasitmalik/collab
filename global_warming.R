@@ -33,7 +33,8 @@ barplot(new_dataset$Mean.Temperature,
 names.arg = new_dataset$Year.Range,
 col = "lightblue",
 border = "black",
-main = "Annual Mean Temperature (1961–1981)",
+main = "Annual Mean Temperature (1961–2022)",
 xlab = "Year",
 ylab = "Mean Temperature (°C)",
 las = 2)
+

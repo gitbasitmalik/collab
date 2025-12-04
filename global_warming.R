@@ -23,8 +23,19 @@ year_1992to22 <- subset(yearly_global_mean, Year > 1991)
 new_dataset <- data.frame(
       '1961-1991'       = year_1961to91$global_Temperature,  
        '1992-2022' = year_1992to22$global_Temperature
-   
       )
 
+#Boxplot
+boxplot(
+  new_dataset$X1961.1991,
+  new_dataset$X1992.2022,
+  names = c("1961–1991", "1992–2022"),
+  xlab = "Year Range",
+  ylab = "Temperature (°C)",
+  col = c("lightblue", "orange"),
+  main = "Temperature Distribution Across Two Periods"
+)
 
+#T test
+t_test_result = t.test(new_dataset$X1961-1991, new_dataset$X1992-2022, paired = TRUE)
 

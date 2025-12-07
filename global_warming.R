@@ -36,6 +36,10 @@ boxplot(
   main = "Temperature Distribution Across Two Periods"
 )
 
-#T test
-t_test_result = t.test(new_dataset$X1961.1991, new_dataset$X1992.2022, paired = TRUE)
+#Wilcoxon test
+wilcox_test_result <- wilcox.test(
+  new_dataset$X1961.1991,
+  new_dataset$X1992.2022,
+  paired = TRUE
+)
 

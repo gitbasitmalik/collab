@@ -40,6 +40,6 @@ boxplot(
 wilcox_test_result <- wilcox.test(
   new_dataset$X1961.1991,
   new_dataset$X1992.2022,
-  paired = TRUE
+  paired = FALSE
 )
 

@@ -25,6 +25,18 @@ new_dataset <- data.frame(
        '1992-2022' = year_1992to22$global_Temperature
       )
 
+# Histogram for the First Period (1961–1991) just for Visualization Question
+hist(new_dataset$X1961.1991, 
+     main = "Histogram: 1961–1991 Period", 
+     xlab = "Temperature Anomaly (°C)", 
+     col = "lightblue")
+
+# Histogram for the Second Period (1992–2022) just for Visualization Question
+hist(new_dataset$X1992.2022, 
+     main = "Histogram: 1992–2022 Period", 
+     xlab = "Temperature Anomaly (°C)", 
+     col = "green")
+
 #Boxplot
 boxplot(
   new_dataset$X1961.1991,
@@ -40,6 +52,6 @@ boxplot(
 wilcox_test_result <- wilcox.test(
   new_dataset$X1961.1991,
   new_dataset$X1992.2022,
-  paired = TRUE
+  paired = FALSE
 )
-
+ print(wilcox_test_result)

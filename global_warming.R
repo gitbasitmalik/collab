@@ -25,27 +25,48 @@ new_dataset <- data.frame(
        '1992-2022' = year_1992to22$global_Temperature
       )
 
-# Histogram for the First Period (1961–1991) just for Visualization Question
-hist(new_dataset$X1961.1991, 
-     main = "Histogram: 1961–1991 Period", 
-     xlab = "Temperature Anomaly (°C)", 
-     col = "lightblue")
+# Histogram for Average Global Temperature Change from period 1961 - 2022
+h <- hist(yearly_global_mean$global_Temperature, breaks = 20, plot = FALSE)
 
-# Histogram for the Second Period (1992–2022) just for Visualization Question
-hist(new_dataset$X1992.2022, 
-     main = "Histogram: 1992–2022 Period", 
-     xlab = "Temperature Anomaly (°C)", 
-     col = "green")
+plot(h,
+     freq = TRUE,
+     col = "lightblue",
+     border = "black",
+     main = "Global Average Temperature Change for period 1961–2022",
+     xlab = "Average Temperature Change (°C)",
+     ylab = "Number of Years",
+     xlim = c(h$breaks[1], tail(h$breaks, 1)),
+     xaxs = "i", xaxt = "n", las = 1,
+     cex.main = 1.4, cex.lab = 1.3)
 
-#Boxplot
+axis(1, at = pretty(c(h$breaks[1], tail(h$breaks, 1)), n = 8), las = 1)
+
+lines(smooth.spline(h$mids, h$counts, spar = 0.6),
+      col = "darkred", lwd = 5)
+
+# Small legend for the histogram
+legend("topright",
+       legend = c("Histogram", "Smoothed curve"),
+       col    = c("lightblue", "darkred"),
+       lwd    = c(10, 5),         
+       lty    = c(1, 1),
+       seg.len = 1,
+       cex    = 0.85,               
+       pt.cex = 1,
+       box.lwd = 0.8,
+       box.col = "gray70",
+       bg     = "white",
+       inset  = 0.01)
+
+#Boxplot for two periods 
 boxplot(
   new_dataset$X1961.1991,
   new_dataset$X1992.2022,
   names = c("1961–1991", "1992–2022"),
   xlab = "Year Range",
-  ylab = "Temperature (°C)",
+  ylab = "Change in Average Temperature (°C)",
   col = c("lightblue", "orange"),
-  main = "Temperature Distribution Across Two Periods"
+  main = "Change in Average Temperature Distribution Across Two Periods"
 )
 
 #Wilcoxon test

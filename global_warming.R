@@ -64,9 +64,9 @@ boxplot(
   new_dataset$X1992.2022,
   names = c("1961–1991", "1992–2022"),
   xlab = "Year Range",
-  ylab = "Temperature (°C)",
+  ylab = "Change in Average Temperature (°C)",
   col = c("lightblue", "orange"),
-  main = "Temperature Distribution Across Two Periods"
+  main = "Change in Average Temperature Distribution Across Two Periods"
 )
 
 #Wilcoxon test
